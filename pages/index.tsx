@@ -1,16 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import { Poppins } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"]
 });
 
 export default function Home() {
@@ -23,62 +18,60 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
-        className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
+        className={`${poppins.variable}`}
       >
-        <main className={styles.main}>
+        <main style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', textAlign: 'center' }}>
           <Image
-            className={styles.logo}
             src="/next.svg"
             alt="Next.js logo"
             width={100}
             height={20}
             priority
+            style={{ marginBottom: '2rem' }}
           />
-          <div className={styles.intro}>
-            <h1>To get started, edit the index.tsx file.</h1>
-            <p>
-              Looking for a starting point or more instructions? Head over to{" "}
-              <a
-                href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Templates
-              </a>{" "}
-              or the{" "}
-              <a
-                href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learning
-              </a>{" "}
-              center.
+          <div style={{ marginBottom: '2rem' }}>
+            <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Welcome to TravelAsia</h1>
+            <p style={{ fontSize: '1.2rem', lineHeight: '1.6', marginBottom: '2rem' }}>
+              Your journey starts here. This is a Next.js project configured with Nestar's stack.
             </p>
           </div>
-          <div className={styles.ctas}>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a
-              className={styles.primary}
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+              href="https://nextjs.org/docs"
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                padding: '0.75rem 1.5rem',
+                backgroundColor: '#000',
+                color: '#fff',
+                borderRadius: '0.5rem',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem'
+              }}
             >
               <Image
-                className={styles.logo}
-                src="/vercel.svg"
-                alt="Vercel logomark"
+                src="/next.svg"
+                alt="Next.js logo"
                 width={16}
                 height={16}
               />
-              Deploy Now
+              Next.js Docs
             </a>
             <a
-              className={styles.secondary}
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+              href="https://mui.com/"
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                padding: '0.75rem 1.5rem',
+                border: '1px solid #ccc',
+                borderRadius: '0.5rem',
+                textDecoration: 'none',
+                color: '#000'
+              }}
             >
-              Documentation
+              MUI Docs
             </a>
           </div>
         </main>
