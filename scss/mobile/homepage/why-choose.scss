@@ -1,0 +1,121 @@
+// Mobile styles for Why Choose section
+
+.why-choose {
+  background: #fff;
+  padding: 40px 0;
+
+  &__container {
+    padding: 0 16px;
+  }
+
+  &__left {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 2rem !important;
+    margin-bottom: 20px !important;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 1.1rem !important;
+    margin-bottom: 28px !important;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  &__features {
+    margin-top: 24px;
+  }
+
+  &__feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    text-align: left;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__feature-icon {
+    flex-shrink: 0;
+    margin-right: 12px;
+    margin-top: 2px;
+    color: #E92C28;
+    font-size: 20px;
+  }
+
+  &__feature-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #212121;
+  }
+
+  &__feature-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #616161;
+  }
+
+  &__right {
+    margin-top: 20px;
+  }
+
+  &__visual {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__card {
+    height: 160px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &--1,
+    &--2 {
+      height: 140px;
+    }
+
+    &--3 {
+      height: 120px;
+      margin-top: 12px;
+    }
+  }
+}
+
+// Mobile-specific adjustments
+@media (max-width: 480px) {
+  .why-choose {
+    padding: 32px 0;
+
+    &__container {
+      padding: 0 12px;
+    }
+
+    &__title {
+      font-size: 1.8rem !important;
+    }
+
+    &__subtitle {
+      font-size: 1rem !important;
+    }
+
+    &__feature-item {
+      margin-bottom: 16px;
+    }
+
+    &__feature-icon {
+      font-size: 18px;
+    }
+  }
+}

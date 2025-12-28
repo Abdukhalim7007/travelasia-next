@@ -1,0 +1,123 @@
+// Desktop styles for Why Choose section
+
+.why-choose {
+  background: #fff;
+  position: relative;
+
+  &__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__left {
+    padding-right: 40px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #212121;
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+    line-height: 1.6;
+    color: #616161;
+  }
+
+  &__features {
+    margin-top: 32px;
+  }
+
+  &__feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__feature-icon {
+    flex-shrink: 0;
+    margin-right: 16px;
+    margin-top: 2px;
+    color: #E92C28;
+    font-size: 24px;
+  }
+
+  &__feature-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #212121;
+  }
+
+  &__feature-description {
+    line-height: 1.6;
+    color: #616161;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__visual {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  &__card {
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    &--1 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    &--2 {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    &--3 {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      margin-top: 16px;
+    }
+  }
+}
+
+// Responsive adjustments for desktop
+@media (max-width: 1200px) {
+  .why-choose {
+    &__container {
+      max-width: 1100px;
+    }
+
+    &__left {
+      padding-right: 30px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .why-choose {
+    &__container {
+      max-width: 900px;
+    }
+
+    &__left {
+      padding-right: 20px;
+    }
+  }
+}

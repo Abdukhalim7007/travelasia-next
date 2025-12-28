@@ -1,0 +1,56 @@
+/** IMPORTS **/
+@import '/scss/variables.scss';
+
+@import '/scss/pc/homepage/hero.scss';
+@import '/scss/pc/homepage/why-choose.scss';
+
+body {
+	-ms-overflow-style: none; /* for Internet Explorer, Edge */
+	scrollbar-width: none; /* for Firefox */
+	overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+	display: none; /* for Chrome, Safari, and Opera */
+}
+
+#pc-wrap {
+	#top {
+		.top {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 1000;
+			background: transparent;
+			backdrop-filter: blur(10px);
+			transition: all 0.3s ease;
+
+			&.scrolled {
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(20px);
+				box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+
+				.top__inner {
+					.top__logo a,
+					.top__nav .top__link {
+						color: #212121 !important;
+					}
+				}
+			}
+		}
+	}
+
+	#main {
+		min-height: calc(100vh - 200px);
+		padding-top: 0; // Remove padding-top to let hero start from top
+	}
+
+	#footer {
+		background: #f5f5f5;
+		border-top: 1px solid #eee;
+		padding: 20px 0;
+		text-align: center;
+		color: #666;
+	}
+}
