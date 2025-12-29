@@ -1,36 +1,39 @@
 // Mobile Hero Section Styles
 
 .hero {
-	min-height: 100vh;
 	position: relative;
-	background: #000;
+	width: 100%;
+	height: 70vh;
+	min-height: 500px;
 	overflow: hidden;
 
-	&__bg {
+	&__video,
+	&__bg-fallback {
 		position: absolute;
-		top: 0; left: 0; width: 100%; height: 100%;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 		z-index: 0;
+
+		video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 
-	&__video {
-		width: 100%; height: 100%;
-		object-fit: cover;
-		position: relative;
-		z-index: 1;
-	}
-
-	&__fallback-img {
-		position: absolute;
-		top: 0; left: 0; width: 100%; height: 100%;
+	&__bg-fallback {
 		background-size: cover;
 		background-position: center;
-		z-index: 0;
 	}
 
 	&__overlay {
 		position: absolute;
-		top: 0; left: 0; width: 100%; height: 100%;
-		background: linear-gradient(180deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,.4) 100%);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 		z-index: 1;
 	}
 
@@ -38,28 +41,18 @@
 		position: relative;
 		z-index: 2;
 		height: 100%;
-		padding: 100px 20px 40px;
-	}
-
-	&__left-col {
-		padding-top: 0;
+		display: flex;
+		align-items: center;
 	}
 
 	&__title {
-		font-size: 2.8rem !important;
-		font-weight: 800 !important;
-		color: #fff;
-		line-height: 1.1 !important;
-		margin-bottom: 20px !important;
 		text-align: center;
+		margin-bottom: 20px !important;
 	}
 
 	&__subtitle {
-		color: rgba(255, 255, 255, 0.9);
-		font-size: 1rem;
-		line-height: 1.6;
-		margin-bottom: 30px !important;
 		text-align: center;
+		margin-bottom: 30px !important;
 	}
 
 	&__actions {
@@ -68,68 +61,11 @@
 
 		button {
 			width: 100%;
-			max-width: 320px;
-			padding: 14px !important;
+			max-width: 300px;
 		}
 	}
 
 	&__search {
-		display: none; // Keep it simple on mobile
+		display: none; // Hide search on mobile hero for cleaner look, or adapt if needed
 	}
-
-	&__chips {
-		margin-top: 40px;
-		.MuiGrid-container {
-			justify-content: center;
-		}
-	}
-
-	&__chip-item {
-		border: 1px solid rgba(255,255,255,0.3);
-		border-radius: 30px;
-		padding: 6px 12px;
-		color: #fff;
-		font-size: 0.7rem;
-		text-align: center;
-		backdrop-filter: blur(8px);
-	}
-
-	&__right-col {
-		margin-top: 40px;
-		justify-content: center;
-	}
-
-	&__partner-card {
-		background: rgba(255, 255, 255, 0.12) !important;
-		backdrop-filter: blur(14px);
-		border: 1px solid rgba(255, 255, 255, 0.18) !important;
-		border-radius: 30px !important;
-		width: 100%;
-		max-width: 360px;
-		color: #fff;
-
-		.hero__card-title { font-size: 1.3rem; margin-bottom: 10px; }
-		.hero__card-desc { font-size: 0.85rem; }
-	}
-
-	&__stat-pill {
-		background: #fff;
-		border-radius: 50px;
-		padding: 6px 15px 6px 6px;
-		display: flex;
-		align-items: center;
-		color: #000;
-	}
-
-	&__stat-count { font-weight: 900; font-size: 0.9rem; }
-	&__stat-label { font-size: 0.6rem; }
-
-	&__play-btn {
-		width: 45px;
-		height: 45px;
-		svg { font-size: 1.5rem; }
-	}
-
-	&__play-ring { width: 60px; height: 60px; }
-	&__play-ring-outer { width: 75px; height: 75px; }
 }

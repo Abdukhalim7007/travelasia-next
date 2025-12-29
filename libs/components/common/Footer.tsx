@@ -21,27 +21,30 @@ const Footer = () => {
 							<TravelExploreIcon sx={{ color: '#fff', fontSize: '2rem' }} />
 							<Typography variant="h5">TravelAsia</Typography>
 						</Box>
+						<Typography className="footer__subtitle">
+							TRAVEL & TOURS AGENCY
+						</Typography>
 						<Typography className="footer__desc">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis tortor at scelerisque luct nullam
 							eu mi nibh eleifend turpis dapibus.
 						</Typography>
-						<Stack className="footer__social" direction="row" spacing={1.5}>
-							<IconButton className="footer__social-btn">
+						<div className="footer__social">
+							<div className="footer__social-icon">
 								<FacebookOutlinedIcon />
-							</IconButton>
-							<IconButton className="footer__social-btn">
+							</div>
+							<div className="footer__social-icon">
 								<InstagramIcon />
-							</IconButton>
-							<IconButton className="footer__social-btn">
+							</div>
+							<div className="footer__social-icon">
 								<TwitterIcon />
-							</IconButton>
-							<IconButton className="footer__social-btn">
+							</div>
+							<div className="footer__social-icon">
 								<YouTubeIcon />
-							</IconButton>
-							<IconButton className="footer__social-btn">
+							</div>
+							<div className="footer__social-icon">
 								<LinkedInIcon />
-							</IconButton>
-						</Stack>
+							</div>
+						</div>
 					</Box>
 
 					{/* Column 2: Company Links */}
@@ -73,35 +76,27 @@ const Footer = () => {
 					{/* Column 4: Contact Information */}
 					<Box className="footer__col footer__col--contact">
 						<Typography className="footer__title">Contact Information</Typography>
-						<Stack spacing={3}>
-							<Stack className="footer__contact-row" direction="row" spacing={2} alignItems="center">
-								<Box className="footer__contact-icon">
-									<PhoneInTalkIcon />
-								</Box>
-								<Box>
-									<Typography variant="caption">Phone Number</Typography>
-									<Typography variant="body2">+82 10-1234-5678</Typography>
-								</Box>
-							</Stack>
-							<Stack className="footer__contact-row" direction="row" spacing={2} alignItems="center">
-								<Box className="footer__contact-icon">
-									<EmailIcon />
-								</Box>
-								<Box>
-									<Typography variant="caption">Email Address</Typography>
-									<Typography variant="body2">hello@travelasia.com</Typography>
-								</Box>
-							</Stack>
-							<Stack className="footer__contact-row" direction="row" spacing={2} alignItems="center">
-								<Box className="footer__contact-icon">
-									<LocationOnIcon />
-								</Box>
-								<Box>
-									<Typography variant="caption">Address</Typography>
-									<Typography variant="body2">Busan, South Korea</Typography>
-								</Box>
-							</Stack>
-						</Stack>
+						<div className="footer__contact-row">
+							<PhoneInTalkIcon />
+							<div>
+								<span className="footer__contact-label">PHONE NUMBER</span>
+								<span className="footer__contact-value">+82 10-1234-5678</span>
+							</div>
+						</div>
+						<div className="footer__contact-row">
+							<EmailIcon />
+							<div>
+								<span className="footer__contact-label">EMAIL ADDRESS</span>
+								<span className="footer__contact-value">hello@travelasia.com</span>
+							</div>
+						</div>
+						<div className="footer__contact-row">
+							<LocationOnIcon />
+							<div>
+								<span className="footer__contact-label">ADDRESS</span>
+								<span className="footer__contact-value">Busan, South Korea</span>
+							</div>
+						</div>
 					</Box>
 				</Stack>
 
