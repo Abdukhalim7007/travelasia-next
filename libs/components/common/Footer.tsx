@@ -1,71 +1,123 @@
 import React from 'react';
-import { Stack, Box, Typography } from '@mui/material';
-import Link from 'next/link';
+import { Stack, Box, Typography, Link, Divider, IconButton } from '@mui/material';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
+import EmailIcon from '@mui/icons-material/Email';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
 const Footer = () => {
 	return (
-		<Box className="footer">
-			<Stack className="footer__inner" sx={{ py: 6, px: { xs: 2, md: 4 }, bgcolor: '#f5f5f5' }}>
-				<Stack direction={{ xs: 'column', md: 'row' }} spacing={4} justifyContent="space-between">
+		<footer className="footer">
+			<Box className="footer__container">
+				<Stack className="footer__top" direction={{ xs: 'column', md: 'row' }} spacing={5}>
 					{/* Column 1: Logo & Description */}
-					<Box className="footer__col" sx={{ flex: 1 }}>
-						<Typography className="footer__title" variant="h6" sx={{ fontWeight: 700, mb: 2, color: '#212121' }}>
-							TravelAsia
+					<Box className="footer__col footer__col--logo">
+						<Box className="footer__logo">
+							<TravelExploreIcon sx={{ color: '#fff', fontSize: '2rem' }} />
+							<Typography variant="h5">TravelAsia</Typography>
+						</Box>
+						<Typography className="footer__desc">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis tortor at scelerisque luct nullam
+							eu mi nibh eleifend turpis dapibus.
 						</Typography>
-						<Typography sx={{ color: '#616161', fontSize: '0.9rem', lineHeight: 1.6, mb: 2 }}>
-							Your trusted travel partner for unforgettable journeys across Asia and beyond.
-						</Typography>
-						<Stack direction="row" spacing={2}>
-							<FacebookOutlinedIcon sx={{ color: '#616161', fontSize: '1.5rem', cursor: 'pointer' }} />
-							<InstagramIcon sx={{ color: '#616161', fontSize: '1.5rem', cursor: 'pointer' }} />
-							<TwitterIcon sx={{ color: '#616161', fontSize: '1.5rem', cursor: 'pointer' }} />
-							<YouTubeIcon sx={{ color: '#616161', fontSize: '1.5rem', cursor: 'pointer' }} />
+						<Stack className="footer__social" direction="row" spacing={1.5}>
+							<IconButton className="footer__social-btn">
+								<FacebookOutlinedIcon />
+							</IconButton>
+							<IconButton className="footer__social-btn">
+								<InstagramIcon />
+							</IconButton>
+							<IconButton className="footer__social-btn">
+								<TwitterIcon />
+							</IconButton>
+							<IconButton className="footer__social-btn">
+								<YouTubeIcon />
+							</IconButton>
+							<IconButton className="footer__social-btn">
+								<LinkedInIcon />
+							</IconButton>
 						</Stack>
 					</Box>
 
-					{/* Column 2: Quick Links */}
-					<Box className="footer__col" sx={{ flex: 1 }}>
-						<Typography className="footer__title" variant="h6" sx={{ fontWeight: 600, mb: 2, color: '#212121' }}>
-							Quick Links
-						</Typography>
-						<Stack spacing={1}>
-							<Link href="/about" className="footer__link">
-								<Typography sx={{ color: '#616161', fontSize: '0.9rem' }}>About Us</Typography>
-							</Link>
-							<Link href="/tours" className="footer__link">
-								<Typography sx={{ color: '#616161', fontSize: '0.9rem' }}>Tours</Typography>
-							</Link>
-							<Link href="/contact" className="footer__link">
-								<Typography sx={{ color: '#616161', fontSize: '0.9rem' }}>Contact</Typography>
-							</Link>
+					{/* Column 2: Company Links */}
+					<Box className="footer__col">
+						<Typography className="footer__title">Company</Typography>
+						<Stack className="footer__links" spacing={1.5}>
+							<Link href="#" className="footer__link">About Us</Link>
+							<Link href="#" className="footer__link">Our Services</Link>
+							<Link href="#" className="footer__link">Why Choose Us</Link>
+							<Link href="#" className="footer__link">Testimonials</Link>
+							<Link href="#" className="footer__link">Careers</Link>
+							<Link href="#" className="footer__link">Blog</Link>
 						</Stack>
 					</Box>
 
-					{/* Column 3: Contact Info */}
-					<Box className="footer__col" sx={{ flex: 1 }}>
-						<Typography className="footer__title" variant="h6" sx={{ fontWeight: 600, mb: 2, color: '#212121' }}>
-							Contact
-						</Typography>
-						<Stack spacing={1}>
-							<Typography sx={{ color: '#616161', fontSize: '0.9rem' }}>+1 (234) 567-8900</Typography>
-							<Typography sx={{ color: '#616161', fontSize: '0.9rem' }}>info@travelasia.com</Typography>
-							<Typography sx={{ color: '#616161', fontSize: '0.9rem' }}>123 Travel Street, Asia City</Typography>
+					{/* Column 3: Explore Links */}
+					<Box className="footer__col">
+						<Typography className="footer__title">Explore</Typography>
+						<Stack className="footer__links" spacing={1.5}>
+							<Link href="#" className="footer__link">Destinations</Link>
+							<Link href="#" className="footer__link">Travel Packages</Link>
+							<Link href="#" className="footer__link">Special Offers</Link>
+							<Link href="#" className="footer__link">Travel Tips</Link>
+							<Link href="#" className="footer__link">FAQ</Link>
+							<Link href="#" className="footer__link">Contact Us</Link>
+						</Stack>
+					</Box>
+
+					{/* Column 4: Contact Information */}
+					<Box className="footer__col footer__col--contact">
+						<Typography className="footer__title">Contact Information</Typography>
+						<Stack spacing={3}>
+							<Stack className="footer__contact-row" direction="row" spacing={2} alignItems="center">
+								<Box className="footer__contact-icon">
+									<PhoneInTalkIcon />
+								</Box>
+								<Box>
+									<Typography variant="caption">Phone Number</Typography>
+									<Typography variant="body2">+82 10-1234-5678</Typography>
+								</Box>
+							</Stack>
+							<Stack className="footer__contact-row" direction="row" spacing={2} alignItems="center">
+								<Box className="footer__contact-icon">
+									<EmailIcon />
+								</Box>
+								<Box>
+									<Typography variant="caption">Email Address</Typography>
+									<Typography variant="body2">hello@travelasia.com</Typography>
+								</Box>
+							</Stack>
+							<Stack className="footer__contact-row" direction="row" spacing={2} alignItems="center">
+								<Box className="footer__contact-icon">
+									<LocationOnIcon />
+								</Box>
+								<Box>
+									<Typography variant="caption">Address</Typography>
+									<Typography variant="body2">Busan, South Korea</Typography>
+								</Box>
+							</Stack>
 						</Stack>
 					</Box>
 				</Stack>
 
-				{/* Footer Bottom */}
-				<Box className="footer__bottom" sx={{ mt: 4, pt: 4, borderTop: '1px solid #eee', textAlign: 'center' }}>
-					<Typography sx={{ color: '#616161', fontSize: '0.85rem' }}>
-						© 2025 TravelAsia. All rights reserved.
+				<Divider className="footer__divider" />
+
+				<Stack className="footer__bottom" direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" alignItems="center" spacing={2}>
+					<Typography className="footer__bottom-left">
+						Copyright © 2025 Krakenbox. All Rights Reserved.
 					</Typography>
-				</Box>
-			</Stack>
-		</Box>
+					<Stack className="footer__bottom-right" direction="row" spacing={4}>
+						<Link href="#">Privacy Policy</Link>
+						<Link href="#">Terms & Condition</Link>
+					</Stack>
+				</Stack>
+			</Box>
+		</footer>
 	);
 };
 

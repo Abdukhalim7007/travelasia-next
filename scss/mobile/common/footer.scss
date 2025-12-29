@@ -1,0 +1,62 @@
+// Mobile Footer Styles
+
+.footer {
+	padding: 60px 20px 30px;
+
+	&__container {
+		padding: 0;
+	}
+
+	&__top {
+		spacing: 40px;
+	}
+
+	&__col {
+		&--logo {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&--contact {
+			margin-top: 20px;
+		}
+	}
+
+	&__desc {
+		max-width: 100%;
+		text-align: center;
+	}
+
+	&__title {
+		margin-bottom: 20px !important;
+		text-align: center;
+	}
+
+	&__links {
+		align-items: center;
+	}
+
+	&__contact-row {
+		justify-content: center;
+		text-align: center;
+		flex-direction: column !important;
+		gap: 10px !important;
+
+		.MuiBox-root {
+			margin: 0 !important;
+		}
+	}
+
+	&__bottom {
+		flex-direction: column !important;
+		text-align: center;
+		gap: 20px !important;
+
+		&-right {
+			justify-content: center;
+		}
+	}
+}
+

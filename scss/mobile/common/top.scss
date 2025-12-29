@@ -1,0 +1,37 @@
+// Mobile Top/Header Styles
+
+.top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background: transparent;
+	transition: all 0.3s ease;
+
+	&--scrolled {
+		background: rgba(0, 0, 0, 0.7);
+		backdrop-filter: blur(10px);
+		padding: 0;
+	}
+
+	&__inner {
+		padding: 15px 20px !important;
+	}
+
+	&__logo {
+		h5 {
+			font-size: 1.25rem !important;
+		}
+	}
+}
+
+.MuiDrawer-paper {
+	background: #fff;
+
+	.top__link {
+		text-decoration: none;
+		color: #212121;
+	}
+}
+
