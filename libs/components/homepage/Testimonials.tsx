@@ -97,6 +97,13 @@ const Testimonials = () => {
 											src={testimonial.avatar}
 											alt={testimonial.name}
 											className="testimonials__avatar"
+											onError={(e) => {
+												const target = e.currentTarget;
+												if (target.src && !target.src.includes('placehold.co')) {
+													target.onerror = null; // Prevent infinite loop
+													target.src = 'https://placehold.co/80x80?text=User';
+												}
+											}}
 										/>
 										<Box className="testimonials__author-info">
 											<Typography variant="h6" className="testimonials__name">

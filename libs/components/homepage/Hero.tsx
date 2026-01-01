@@ -116,7 +116,11 @@ const Hero = () => {
 														src={`/img/avatar-${i}.jpg`}
 														className="hero__avatar"
 														onError={(e) => {
-															e.currentTarget.src = `data:image/svg+xml;base64,${btoa(`<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="#667eea"/><text x="20" y="25" text-anchor="middle" fill="white" font-size="16" font-family="Arial">${i}</text></svg>`)}`;
+															const target = e.currentTarget;
+															if (target.src && !target.src.includes('placehold.co')) {
+																target.onerror = null; // Prevent infinite loop
+																target.src = 'https://placehold.co/80x80?text=User';
+															}
 														}}
 													>
 														{i}

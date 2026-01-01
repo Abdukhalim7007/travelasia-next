@@ -24,26 +24,15 @@ const Brands = () => {
 								src={logo.src}
 								alt={logo.alt}
 								className="brands__logoImg"
+								loading="lazy"
 								onError={(e) => {
-									e.currentTarget.style.display = 'none';
-									e.currentTarget.nextElementSibling!.style.display = 'flex';
+									const target = e.currentTarget;
+									if (target.src && !target.src.includes('placehold.co')) {
+										target.onerror = null; // Prevent infinite loop
+										target.src = 'https://placehold.co/160x60?text=Brand';
+									}
 								}}
 							/>
-							<Box className="brands__logoPlaceholder" sx={{
-								display: 'none',
-								alignItems: 'center',
-								justifyContent: 'center',
-								width: '100%',
-								height: '100%',
-								background: '#f8f9fa',
-								border: '2px dashed #ddd',
-								borderRadius: '8px',
-								color: '#999',
-								fontSize: '12px',
-								textAlign: 'center'
-							}}>
-								{logo.alt}
-							</Box>
 						</Box>
 					))}
 				</Stack>

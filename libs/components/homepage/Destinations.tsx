@@ -87,33 +87,15 @@ const Destinations = () => {
 									<img
 										src={destination.image}
 										alt={destination.name}
+										loading="lazy"
 										onError={(e) => {
-											e.currentTarget.style.display = 'none';
-											const placeholder = e.currentTarget.nextElementSibling as HTMLElement;
-											if (placeholder) placeholder.style.display = 'flex';
+											const target = e.currentTarget;
+											if (target.src && !target.src.includes('placehold.co')) {
+												target.onerror = null; // Prevent infinite loop
+												target.src = 'https://placehold.co/800x600?text=TravelAsia';
+											}
 										}}
 									/>
-									<Box
-										className="destinations__imagePlaceholder"
-										sx={{
-											display: 'none',
-											position: 'absolute',
-											top: 0,
-											left: 0,
-											right: 0,
-											bottom: 0,
-											background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-											alignItems: 'center',
-											justifyContent: 'center',
-											color: 'white',
-											fontSize: '20px',
-											fontWeight: 'bold',
-											textAlign: 'center',
-											padding: '20px'
-										}}
-									>
-										{destination.name}
-									</Box>
 									<Box className="destinations__overlay">
 										<Button variant="contained" className="destinations__exploreBtn">
 											Explore Tours

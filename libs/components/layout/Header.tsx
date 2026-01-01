@@ -14,12 +14,16 @@ import {
   Menu,
   MenuItem,
   Box,
+  Typography,
 } from "@mui/material";
 import {
   Menu as MenuIcon,
   Close as CloseIcon,
   Language as LanguageIcon,
   Person as PersonIcon,
+  LocationOn as LocationOnIcon,
+  Flight as FlightIcon,
+  ArrowForward as ArrowForwardIcon,
 } from "@mui/icons-material";
 
 import { useUser } from "@/apollo/store";
@@ -109,9 +113,18 @@ const Header: React.FC = () => {
       <div className="header__container">
         {/* Logo */}
         <Link href="/" className="header__logo">
-          <span>
-            Bavro<span className="header__logoDot">.</span>
-          </span>
+          <Box className="header__logoIcon">
+            <LocationOnIcon sx={{ fontSize: '2.5rem', color: '#fff' }} />
+            <FlightIcon sx={{ fontSize: '1.2rem', color: '#fff', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+          </Box>
+          <Box className="header__logoText">
+            <Typography variant="h5" className="header__logoTitle">
+              Bavro
+            </Typography>
+            <Typography variant="caption" className="header__logoTagline">
+              Travel & Tours Agency
+            </Typography>
+          </Box>
         </Link>
 
         {/* Desktop Navigation */}
@@ -125,6 +138,7 @@ const Header: React.FC = () => {
             >
               <Link href={link.path} className="header__navLink">
                 {link.name}
+                {link.submenu && <span className="header__navPlus">+</span>}
               </Link>
               {link.submenu && activeSubmenu === link.name && (
                 <div className="header__submenu">
@@ -197,11 +211,13 @@ const Header: React.FC = () => {
           ) : (
             <Button
               variant="contained"
-              color="primary"
               className="header__bookBtn"
               onClick={() => router.push("/login")}
             >
               Book Now
+              <Box className="header__bookBtnIcon">
+                <ArrowForwardIcon />
+              </Box>
             </Button>
           )}
 
@@ -223,9 +239,20 @@ const Header: React.FC = () => {
         >
           <div className="header__drawerContent">
             <div className="header__drawerTop">
-              <span className="header__logo">
-                Bavro<span className="header__logoDot">.</span>
-              </span>
+              <Box className="header__logo">
+                <Box className="header__logoIcon">
+                  <LocationOnIcon sx={{ fontSize: '2rem', color: '#E92C28' }} />
+                  <FlightIcon sx={{ fontSize: '1rem', color: '#E92C28', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+                </Box>
+                <Box className="header__logoText">
+                  <Typography variant="h6" className="header__logoTitle">
+                    Bavro
+                  </Typography>
+                  <Typography variant="caption" className="header__logoTagline">
+                    Travel & Tours Agency
+                  </Typography>
+                </Box>
+              </Box>
               <IconButton
                 onClick={handleDrawerToggle}
                 className="header__drawerClose"
@@ -261,7 +288,6 @@ const Header: React.FC = () => {
             {!user.isLoggedIn && (
               <Button
                 variant="contained"
-                color="primary"
                 fullWidth
                 className="header__drawerBookBtn"
                 onClick={() => {
@@ -270,6 +296,9 @@ const Header: React.FC = () => {
                 }}
               >
                 Book Now
+                <Box className="header__bookBtnIcon">
+                  <ArrowForwardIcon />
+                </Box>
               </Button>
             )}
           </div>
