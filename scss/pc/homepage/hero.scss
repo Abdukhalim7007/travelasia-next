@@ -5,7 +5,8 @@
 	position: relative;
 	background: #000;
 	// overflow: hidden; // Disabled to allow overlap
-	padding-bottom: 56px; // Space for overlap
+	padding-bottom: 56px; // Space for BookingStrip overlap
+	margin-bottom: 0;
 
 	&__video {
 		position: absolute;
