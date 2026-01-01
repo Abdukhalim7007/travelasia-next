@@ -58,3 +58,9 @@ const withLayoutMain = (Component: any) => {
 };
 
 export default withLayoutMain;
+
+
+
+
+
+

@@ -5,7 +5,8 @@
 	width: 100%;
 	height: 70vh;
 	min-height: 500px;
-	overflow: hidden;
+	// overflow: hidden; // Disabled to allow overlap
+	padding-bottom: 28px; // Space for overlap
 
 	&__video,
 	&__bg-fallback {
