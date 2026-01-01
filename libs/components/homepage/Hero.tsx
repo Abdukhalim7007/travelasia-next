@@ -47,21 +47,10 @@ const Hero = () => {
 							left: 0,
 							right: 0,
 							bottom: 0,
-							background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-							alignItems: 'center',
-							justifyContent: 'center',
-							color: 'white',
-							fontSize: '24px',
-							fontWeight: 'bold',
-							textAlign: 'center',
-							zIndex: -1
+							background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+							zIndex: 0
 						}}
-					>
-						<Box>
-							<Typography variant="h3" sx={{ mb: 2 }}>Discover the World</Typography>
-							<Typography variant="h6">with TravelAsia</Typography>
-						</Box>
-					</Box>
+					/>
 				</Box>
 
 				<Box className="hero__overlay" />
@@ -70,17 +59,24 @@ const Hero = () => {
 					<Grid container sx={{ height: '100%' }}>
 						{/* Left Content */}
 						<Grid item xs={12} md={7} className="hero__left-col">
-							<Stack spacing={4}>
-								<Typography variant="h1" className="hero__title">
-									Discover the World <br /> with TravelAsia.
-								</Typography>
+							<Stack spacing={3}>
+								<Box className="hero__title-wrapper">
+									<Typography variant="h1" className="hero__title">
+										Discover the World <br /> with TravelAsia.
+									</Typography>
+									<Typography variant="h6" className="hero__subtitle">
+										Explore breathtaking destinations, exclusive tour packages, and unforgettable adventures around the globe.
+									</Typography>
+								</Box>
 
 								<Button
 									variant="contained"
 									className="hero__explore-btn"
-									endIcon={<Box className="hero__btn-icon"><ArrowForwardIcon /></Box>}
 								>
 									Explore Now
+									<Box className="hero__btn-icon">
+										<ArrowForwardIcon />
+									</Box>
 								</Button>
 
 								{/* Tags Grid at Bottom Left */}
@@ -97,7 +93,7 @@ const Hero = () => {
 						{/* Right Card at Bottom Right */}
 						<Grid item xs={12} md={5} className="hero__right-col">
 							<Card className="hero__partner-card">
-								<CardContent sx={{ p: 4 }}>
+								<CardContent className="hero__card-content">
 									<Typography variant="h5" className="hero__card-title">
 										Your Trusted Travel Partner!
 									</Typography>
