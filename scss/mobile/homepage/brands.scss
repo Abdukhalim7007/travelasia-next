@@ -1,0 +1,45 @@
+.brands {
+	background: #ffffff;
+	padding: 40px 0;
+
+	&__container {
+		padding: 0 20px;
+		text-align: center;
+	}
+
+	&__title {
+		font-size: 18px !important;
+		font-weight: 700 !important;
+		color: #1a1a1a !important;
+		margin-bottom: 30px !important;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	&__logos {
+		display: flex;
+		overflow-x: auto;
+		gap: 40px;
+		padding: 10px 0 20px;
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+
+		&::-webkit-scrollbar {
+			display: none; /* Chrome, Safari and Opera */
+		}
+	}
+
+	&__logoItem {
+		flex: 0 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 0.8;
+	}
+
+	&__logoImg {
+		max-width: 120px;
+		height: auto;
+	}
+}
+

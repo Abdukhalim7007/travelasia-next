@@ -1,0 +1,227 @@
+.newsletter {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: #fff;
+	padding: 50px 0;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,0 1000,0 1000,60 0,100"/></svg>') no-repeat center bottom;
+		background-size: cover;
+	}
+
+	&__container {
+		padding: 0 20px;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__left {
+		margin-bottom: 40px;
+	}
+
+	&__content {
+		width: 100%;
+	}
+
+	&__title {
+		font-size: 1.8rem !important;
+		font-weight: 800 !important;
+		color: #fff !important;
+		margin-bottom: 12px !important;
+		line-height: 1.2;
+		text-align: center;
+	}
+
+	&__description {
+		font-size: 0.95rem !important;
+		color: rgba(255, 255, 255, 0.9) !important;
+		margin-bottom: 25px !important;
+		line-height: 1.6;
+		text-align: center;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-bottom: 25px;
+		width: 100%;
+	}
+
+	&__input {
+		width: 100%;
+
+		.MuiOutlinedInput-root {
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			border-radius: 12px;
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.15);
+			}
+
+			&.Mui-focused {
+				background: rgba(255, 255, 255, 0.2);
+			}
+
+			.MuiOutlinedInput-notchedOutline {
+				border: none;
+			}
+
+			input {
+				color: #fff;
+				padding: 16px;
+				&::placeholder {
+					color: rgba(255, 255, 255, 0.7);
+				}
+			}
+		}
+	}
+
+	&__input-icon {
+		color: rgba(255, 255, 255, 0.7);
+		margin-right: 8px;
+	}
+
+	&__submit-btn {
+		background: #fff !important;
+		color: #667eea !important;
+		border-radius: 25px !important;
+		padding: 14px 24px !important;
+		font-weight: 600 !important;
+		text-transform: none !important;
+		font-size: 1rem !important;
+		width: 100%;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.9) !important;
+			transform: translateY(-1px);
+		}
+	}
+
+	&__success {
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 12px;
+		padding: 24px;
+		text-align: center;
+		margin-bottom: 25px;
+	}
+
+	&__success-icon {
+		font-size: 2.5rem !important;
+		color: #4caf50;
+		margin-bottom: 12px;
+	}
+
+	&__success-title {
+		color: #fff !important;
+		margin-bottom: 8px !important;
+		font-weight: 700 !important;
+		font-size: 1.2rem !important;
+	}
+
+	&__success-message {
+		color: rgba(255, 255, 255, 0.9) !important;
+		font-size: 0.9rem !important;
+	}
+
+	&__benefits {
+		margin-top: 20px;
+	}
+
+	&__benefits-title {
+		color: #fff !important;
+		font-weight: 600 !important;
+		margin-bottom: 12px !important;
+		font-size: 1rem !important;
+		text-align: center;
+	}
+
+	&__benefit-item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 8px;
+		justify-content: center;
+	}
+
+	&__benefit-icon {
+		color: #4caf50;
+		font-size: 1rem !important;
+		margin-right: 8px;
+	}
+
+	&__right {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__card {
+		background: rgba(255, 255, 255, 0.1) !important;
+		backdrop-filter: blur(20px);
+		border: 1px solid rgba(255, 255, 255, 0.2) !important;
+		border-radius: 16px !important;
+		width: 100%;
+		max-width: 350px;
+		box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+	}
+
+	&__card-content {
+		padding: 30px 20px !important;
+		text-align: center;
+	}
+
+	&__card-title {
+		color: #fff !important;
+		font-weight: 700 !important;
+		margin-bottom: 12px !important;
+		font-size: 1.4rem !important;
+	}
+
+	&__card-text {
+		color: rgba(255, 255, 255, 0.9) !important;
+		margin-bottom: 24px !important;
+		font-size: 0.9rem !important;
+		line-height: 1.6;
+	}
+
+	&__stats {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+	&__stat {
+		text-align: center;
+		min-width: 70px;
+	}
+
+	&__stat-number {
+		color: #fff !important;
+		font-weight: 800 !important;
+		margin-bottom: 2px !important;
+		font-size: 1.5rem !important;
+	}
+
+	&__stat-label {
+		color: rgba(255, 255, 255, 0.8) !important;
+		font-size: 0.75rem !important;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+}
+

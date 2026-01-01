@@ -1,0 +1,194 @@
+.filter {
+	background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+	padding: 40px 0;
+	position: relative;
+
+	&__container {
+		padding: 0 20px;
+	}
+
+	&__card {
+		border-radius: 16px !important;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+		border: none !important;
+		background: rgba(255, 255, 255, 0.95) !important;
+		backdrop-filter: blur(10px);
+		overflow: visible;
+	}
+
+	&__content {
+		padding: 24px !important;
+	}
+
+	&__header {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	&__title {
+		font-size: 1.6rem !important;
+		font-weight: 800 !important;
+		color: #1a1a1a !important;
+		margin-bottom: 10px !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		.MuiSvgIcon-root {
+			font-size: 2rem;
+			color: #ff2e59;
+			margin-bottom: 8px;
+		}
+	}
+
+	&__subtitle {
+		font-size: 0.9rem !important;
+		color: #666 !important;
+		margin-bottom: 12px !important;
+		line-height: 1.5;
+	}
+
+	&__activeCount {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+		color: white !important;
+		font-weight: 600 !important;
+		margin-top: 10px !important;
+		font-size: 0.8rem !important;
+	}
+
+	&__grid {
+		margin-bottom: 30px;
+	}
+
+	&__search {
+		margin-bottom: 16px;
+
+		.MuiOutlinedInput-root {
+			border-radius: 10px;
+
+			&:hover {
+				box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+			}
+
+			&.Mui-focused {
+				box-shadow: 0 4px 16px rgba(102, 126, 234, 0.25);
+				border-color: #667eea;
+			}
+		}
+	}
+
+	&__priceRange {
+		margin-top: 8px;
+		margin-bottom: 16px;
+	}
+
+	&__priceLabel {
+		font-weight: 600;
+		color: #1a1a1a;
+		margin-bottom: 12px;
+		display: flex;
+		align-items: center;
+		font-size: 0.9rem;
+
+		.MuiSvgIcon-root {
+			color: #4caf50;
+			font-size: 1rem;
+		}
+	}
+
+	&__slider {
+		color: #667eea !important;
+
+		.MuiSlider-thumb {
+			width: 20px;
+			height: 20px;
+			box-shadow: 0 3px 8px rgba(102, 126, 234, 0.3);
+
+			&:hover {
+				box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+			}
+		}
+
+		.MuiSlider-track {
+			height: 3px;
+		}
+
+		.MuiSlider-rail {
+			height: 3px;
+			background: #e0e0e0;
+		}
+
+		.MuiSlider-valueLabel {
+			font-size: 0.8rem;
+		}
+	}
+
+	.MuiFormControl-root {
+		margin-bottom: 16px;
+
+		.MuiOutlinedInput-root {
+			border-radius: 10px;
+			transition: all 0.3s ease;
+
+			&:hover {
+				box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+			}
+
+			&.Mui-focused {
+				box-shadow: 0 4px 16px rgba(102, 126, 234, 0.25);
+				border-color: #667eea;
+			}
+		}
+
+		.MuiSelect-select {
+			display: flex;
+			align-items: center;
+			font-size: 0.9rem;
+		}
+	}
+
+	&__actions {
+		gap: 12px;
+
+		.MuiStack-root {
+			width: 100%;
+		}
+	}
+
+	&__searchBtn {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+		color: white !important;
+		border-radius: 20px !important;
+		padding: 14px 24px !important;
+		font-weight: 600 !important;
+		text-transform: none !important;
+		font-size: 1rem !important;
+		width: 100%;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+			transform: translateY(-1px);
+		}
+	}
+
+	&__clearBtn {
+		border: 2px solid #667eea !important;
+		color: #667eea !important;
+		border-radius: 20px !important;
+		padding: 12px 20px !important;
+		font-weight: 600 !important;
+		text-transform: none !important;
+		font-size: 1rem !important;
+		width: 100%;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: rgba(102, 126, 234, 0.1) !important;
+			border-color: #5a6fd8 !important;
+			color: #5a6fd8 !important;
+		}
+	}
+}
+

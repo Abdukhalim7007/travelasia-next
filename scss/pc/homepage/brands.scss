@@ -1,0 +1,55 @@
+.brands {
+	background: #ffffff;
+	padding: 80px 0;
+
+	&__container {
+		max-width: 1300px;
+		margin: 0 auto;
+		padding: 0 40px;
+		text-align: center;
+	}
+
+	&__title {
+		font-size: 24px !important;
+		font-weight: 700 !important;
+		color: #1a1a1a !important;
+		margin-bottom: 50px !important;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	&__logos {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: nowrap;
+		gap: 30px;
+	}
+
+	&__logoItem {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 0.6;
+		transition: all 0.3s ease;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 1;
+			transform: translateY(-5px);
+		}
+	}
+
+	&__logoImg {
+		max-width: 160px;
+		height: auto;
+		filter: grayscale(100%);
+		transition: all 0.3s ease;
+
+		&:hover {
+			filter: grayscale(0%);
+		}
+	}
+}
+

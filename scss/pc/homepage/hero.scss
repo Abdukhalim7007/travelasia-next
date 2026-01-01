@@ -4,7 +4,8 @@
 	height: 100vh;
 	position: relative;
 	background: #000;
-	overflow: hidden;
+	// overflow: hidden; // Disabled to allow overlap
+	padding-bottom: 56px; // Space for overlap
 
 	&__video {
 		position: absolute;

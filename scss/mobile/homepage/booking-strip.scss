@@ -1,0 +1,74 @@
+.booking-strip {
+	position: relative;
+	z-index: 20;
+	margin-top: -28px;
+
+	&__container {
+		padding: 0 15px;
+	}
+
+	&__bar {
+		background: #ffffff;
+		border-radius: 22px;
+		box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+		display: flex;
+		flex-direction: column;
+		padding: 24px 20px;
+		gap: 20px;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #f0f0f0;
+
+		&:last-of-type {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+	}
+
+	&__icon {
+		color: #ff2e59;
+		display: flex;
+		align-items: center;
+		
+		svg {
+			font-size: 22px;
+		}
+	}
+
+	&__meta {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__label {
+		font-size: 11px;
+		color: #777;
+		text-transform: uppercase;
+		margin-bottom: 2px;
+	}
+
+	&__value {
+		font-size: 15px;
+		font-weight: 700;
+		color: #1a1a1a;
+	}
+
+	&__btn {
+		background: #ff2e59 !important;
+		color: #fff !important;
+		border-radius: 16px !important;
+		padding: 14px !important;
+		text-transform: none !important;
+		font-weight: 600 !important;
+		font-size: 16px !important;
+		height: 52px;
+		width: 100%;
+		box-shadow: none !important;
+		margin-top: 10px;
+	}
+}

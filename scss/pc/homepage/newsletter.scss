@@ -1,0 +1,216 @@
+.newsletter {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: #fff;
+	padding: 80px 0;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,0 1000,0 1000,60 0,100"/></svg>') no-repeat center bottom;
+		background-size: cover;
+	}
+
+	&__container {
+		max-width: 1300px;
+		margin: 0 auto;
+		padding: 0 40px;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__left {
+		padding-right: 40px;
+	}
+
+	&__content {
+		max-width: 500px;
+	}
+
+	&__title {
+		font-size: 2.5rem !important;
+		font-weight: 800 !important;
+		color: #fff !important;
+		margin-bottom: 16px !important;
+		line-height: 1.2;
+	}
+
+	&__description {
+		font-size: 1.1rem !important;
+		color: rgba(255, 255, 255, 0.9) !important;
+		margin-bottom: 30px !important;
+		line-height: 1.6;
+	}
+
+	&__form {
+		display: flex;
+		gap: 16px;
+		margin-bottom: 30px;
+		max-width: 500px;
+	}
+
+	&__input {
+		flex: 1;
+
+		.MuiOutlinedInput-root {
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.15);
+			}
+
+			&.Mui-focused {
+				background: rgba(255, 255, 255, 0.2);
+			}
+
+			.MuiOutlinedInput-notchedOutline {
+				border: none;
+			}
+
+			input {
+				color: #fff;
+				&::placeholder {
+					color: rgba(255, 255, 255, 0.7);
+				}
+			}
+		}
+	}
+
+	&__input-icon {
+		color: rgba(255, 255, 255, 0.7);
+		margin-right: 12px;
+	}
+
+	&__submit-btn {
+		background: #fff !important;
+		color: #667eea !important;
+		border-radius: 25px !important;
+		padding: 12px 30px !important;
+		font-weight: 600 !important;
+		text-transform: none !important;
+		font-size: 1rem !important;
+		min-width: 140px;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.9) !important;
+			transform: translateY(-2px);
+			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	&__success {
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 16px;
+		padding: 30px;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	&__success-icon {
+		font-size: 3rem !important;
+		color: #4caf50;
+		margin-bottom: 16px;
+	}
+
+	&__success-title {
+		color: #fff !important;
+		margin-bottom: 12px !important;
+		font-weight: 700 !important;
+	}
+
+	&__success-message {
+		color: rgba(255, 255, 255, 0.9) !important;
+	}
+
+	&__benefits {
+		margin-top: 20px;
+	}
+
+	&__benefits-title {
+		color: #fff !important;
+		font-weight: 600 !important;
+		margin-bottom: 16px !important;
+	}
+
+	&__benefit-item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+	}
+
+	&__benefit-icon {
+		color: #4caf50;
+		font-size: 1.2rem !important;
+		margin-right: 12px;
+	}
+
+	&__right {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__card {
+		background: rgba(255, 255, 255, 0.1) !important;
+		backdrop-filter: blur(20px);
+		border: 1px solid rgba(255, 255, 255, 0.2) !important;
+		border-radius: 20px !important;
+		max-width: 400px;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+	}
+
+	&__card-content {
+		padding: 40px !important;
+		text-align: center;
+	}
+
+	&__card-title {
+		color: #fff !important;
+		font-weight: 700 !important;
+		margin-bottom: 16px !important;
+		font-size: 1.8rem !important;
+	}
+
+	&__card-text {
+		color: rgba(255, 255, 255, 0.9) !important;
+		margin-bottom: 30px !important;
+		font-size: 1rem !important;
+		line-height: 1.6;
+	}
+
+	&__stats {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	&__stat {
+		text-align: center;
+	}
+
+	&__stat-number {
+		color: #fff !important;
+		font-weight: 800 !important;
+		margin-bottom: 4px !important;
+		font-size: 2rem !important;
+	}
+
+	&__stat-label {
+		color: rgba(255, 255, 255, 0.8) !important;
+		font-size: 0.85rem !important;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+}
+
