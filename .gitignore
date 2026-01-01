@@ -5,10 +5,12 @@
 /.pnp
 .pnp.*
 .yarn/*
-!.yarn/patches
-!.yarn/plugins
 !.yarn/releases
-!.yarn/versions
+!.yarn/plugins
+!.yarn/sdks
+.yarn-cache/
+.yarn-metadata.json
+.yarn-tarball.tgz
 
 # testing
 /coverage
@@ -16,6 +18,8 @@
 # next.js
 /.next/
 /out/
+/dist/
+/build/
 
 # production
 /build
@@ -31,7 +35,9 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+.env
+.env.local
+.env*.local
 
 # vercel
 .vercel
