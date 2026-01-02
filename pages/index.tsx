@@ -4,11 +4,9 @@ import withLayoutMain from '../libs/components/layout/LayoutHome';
 import Hero from '../libs/components/homepage/Hero';
 import BookingStrip from '../libs/components/homepage/BookingStrip';
 import Destinations from '../libs/components/homepage/Destinations';
+import BrandsStrip from '../libs/components/homepage/BrandsStrip';
+import TopDestinations from '../libs/components/homepage/TopDestinations';
 import FeaturedTours from '../libs/components/homepage/FeaturedTours';
-import WhyChoose from '../libs/components/homepage/WhyChoose';
-import Testimonials from '../libs/components/homepage/Testimonials';
-import Brands from '../libs/components/homepage/Brands';
-import Newsletter from '../libs/components/homepage/Newsletter';
 
 const Home: NextPage = () => {
 	return (
@@ -16,11 +14,9 @@ const Home: NextPage = () => {
 			<Hero />
 			<BookingStrip />
 			<Destinations />
+			<BrandsStrip />
+			<TopDestinations />
 			<FeaturedTours />
-			<WhyChoose />
-			<Testimonials />
-			<Brands />
-			<Newsletter />
 		</Stack>
 	);
 };

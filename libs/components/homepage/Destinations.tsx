@@ -1,148 +1,105 @@
-import React from 'react';
-import { Box, Stack, Typography, Button, Grid, Card, CardContent } from '@mui/material';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { Box, Stack, Typography, Button } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import StarIcon from '@mui/icons-material/Star';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ExploreIcon from '@mui/icons-material/Explore';
 
 const Destinations = () => {
+	const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
+
 	const destinations = [
 		{
 			id: 1,
-			name: 'Bali, Indonesia',
-			country: 'Indonesia',
-			rating: 4.8,
-			price: 'From $899',
-			image: '/img/destinations/bali.jpg',
-			description: 'Tropical paradise with stunning beaches and rich culture.',
-			tours: '25+ Tours'
+			location: 'Bali, Indonesia',
+			title: 'The Island of Gods',
+			image: '/img/destinations/bali.jpg'
 		},
 		{
 			id: 2,
-			name: 'Tokyo, Japan',
-			country: 'Japan',
-			rating: 4.9,
-			price: 'From $1,299',
-			image: '/img/destinations/tokyo.jpg',
-			description: 'Modern metropolis blending tradition with cutting-edge technology.',
-			tours: '18+ Tours'
+			location: 'Kyoto, Japan',
+			title: 'Where Tradition Meet Serenity',
+			image: '/img/destinations/kyoto.jpg'
 		},
 		{
 			id: 3,
-			name: 'Paris, France',
-			country: 'France',
-			rating: 4.7,
-			price: 'From $1,099',
-			image: '/img/destinations/paris.jpg',
-			description: 'The City of Light, romance, and world-class cuisine.',
-			tours: '32+ Tours'
-		},
-		{
-			id: 4,
-			name: 'Santorini, Greece',
-			country: 'Greece',
-			rating: 4.6,
-			price: 'From $949',
-			image: '/img/destinations/santorini.jpg',
-			description: 'Breathtaking sunsets and iconic white-washed architecture.',
-			tours: '15+ Tours'
-		},
-		{
-			id: 5,
-			name: 'Dubai, UAE',
-			country: 'UAE',
-			rating: 4.5,
-			price: 'From $1,199',
-			image: '/img/destinations/dubai.jpg',
-			description: 'Luxury shopping, desert adventures, and modern marvels.',
-			tours: '22+ Tours'
-		},
-		{
-			id: 6,
-			name: 'Swiss Alps',
-			country: 'Switzerland',
-			rating: 4.8,
-			price: 'From $1,399',
-			image: '/img/destinations/swiss-alps.jpg',
-			description: 'Stunning mountain landscapes and charming alpine villages.',
-			tours: '12+ Tours'
+			location: 'Swiss Alps, Switzerland',
+			title: 'A Winter Wonderland',
+			image: '/img/destinations/swiss-alps.jpg'
 		}
 	];
+
+	const handleImageError = (id: number) => {
+		setImageErrors((prev) => ({ ...prev, [id]: true }));
+	};
 
 	return (
 		<section className="destinations">
 			<Box className="destinations__container">
+				{/* Header */}
 				<Box className="destinations__header">
-					<Typography variant="h2" className="destinations__title">
-						Popular Destinations
-					</Typography>
-					<Typography variant="body1" className="destinations__subtitle">
-						Explore our most sought-after travel destinations around the world
-					</Typography>
+					<Box className="destinations__headerContent">
+						<Box className="destinations__headerIcon">
+							<ExploreIcon />
+						</Box>
+						<Box className="destinations__headerText">
+							<Typography className="destinations__title">
+								<strong>Top Rated</strong> Destinations
+							</Typography>
+							<Typography className="destinations__subtitle">
+								for Your Next Adventure.
+							</Typography>
+						</Box>
+					</Box>
+					<Button className="destinations__bookingBtn" variant="contained">
+						Booking Now
+						<ArrowForwardIcon className="destinations__bookingBtnIcon" />
+					</Button>
 				</Box>
 
-				<Grid container spacing={3} className="destinations__grid">
+				{/* Cards Grid */}
+				<Box className="destinations__grid">
 					{destinations.map((destination) => (
-						<Grid item xs={12} sm={6} lg={4} key={destination.id}>
-							<Card className="destinations__card">
-								<Box className="destinations__image">
-									<img
+						<Box key={destination.id} className="destinations__card">
+							<Box className="destinations__media">
+								{!imageErrors[destination.id] && (
+									<Image
+										className="destinations__img"
 										src={destination.image}
-										alt={destination.name}
-										loading="lazy"
-										onError={(e) => {
-											const target = e.currentTarget;
-											if (target.src && !target.src.includes('placehold.co')) {
-												target.onerror = null; // Prevent infinite loop
-												target.src = 'https://placehold.co/800x600?text=TravelAsia';
-											}
-										}}
+										alt={destination.title}
+										fill
+										sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+										style={{ objectFit: 'cover' }}
+										onError={() => handleImageError(destination.id)}
 									/>
-									<Box className="destinations__overlay">
-										<Button variant="contained" className="destinations__exploreBtn">
-											Explore Tours
-										</Button>
-									</Box>
-								</Box>
-								<CardContent className="destinations__content">
-									<Stack direction="row" justifyContent="space-between" alignItems="flex-start" className="destinations__header-row">
-										<Box>
-											<Typography variant="h6" className="destinations__name">
-												{destination.name}
-											</Typography>
-											<Stack direction="row" alignItems="center" spacing={0.5} className="destinations__location">
-												<LocationOnIcon fontSize="small" />
-												<Typography variant="body2">{destination.country}</Typography>
-											</Stack>
-										</Box>
-										<Stack direction="row" alignItems="center" spacing={0.5} className="destinations__rating">
-											<StarIcon className="destinations__star" />
-											<Typography variant="body2" className="destinations__rating-text">
-												{destination.rating}
-											</Typography>
-										</Stack>
+								)}
+								{imageErrors[destination.id] && (
+									<Box className="destinations__imgFallback" />
+								)}
+								<Box className="destinations__overlay">
+									<Stack direction="row" alignItems="center" spacing={0.5} className="destinations__location">
+										<LocationOnIcon className="destinations__locationIcon" />
+										<Typography className="destinations__locationText">
+											{destination.location}
+										</Typography>
 									</Stack>
-
-									<Typography variant="body2" className="destinations__description">
-										{destination.description}
+									<Typography className="destinations__titleText">
+										{destination.title}
 									</Typography>
-
-									<Stack direction="row" justifyContent="space-between" alignItems="center" className="destinations__footer">
-										<Typography variant="h6" className="destinations__price">
-											{destination.price}
-										</Typography>
-										<Typography variant="body2" className="destinations__tours">
-											{destination.tours}
-										</Typography>
-									</Stack>
-								</CardContent>
-							</Card>
-						</Grid>
+								</Box>
+							</Box>
+						</Box>
 					))}
-				</Grid>
+				</Box>
 
-				<Box className="destinations__cta">
-					<Button variant="outlined" className="destinations__viewAllBtn">
-						View All Destinations
-					</Button>
+				{/* Bottom CTA Text */}
+				<Box className="destinations__footer">
+					<Typography className="destinations__footerText">
+						Where will your next journey take you? Find your dream destination with TravelAsia!{' '}
+						<Box component="span" className="destinations__footerLink">
+							Explore More Destinations
+						</Box>
+					</Typography>
 				</Box>
 			</Box>
 		</section>

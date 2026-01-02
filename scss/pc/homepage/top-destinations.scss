@@ -1,0 +1,145 @@
+#pc-wrap {
+	.top-destinations {
+		background: #ffffff;
+		padding: 80px 0;
+
+		&__container {
+			max-width: 1300px;
+			margin: 0 auto;
+			padding: 0 40px;
+		}
+
+		&__title {
+			font-size: 2rem !important;
+			font-weight: 800 !important;
+			color: #1a1a1a !important;
+			margin: 0 0 50px 0 !important;
+			text-align: center;
+		}
+
+		&__carousel {
+			position: relative;
+			display: flex;
+			align-items: center;
+			gap: 16px;
+		}
+
+		&__navBtn {
+			background: #1f1f1f !important;
+			color: #ffffff !important;
+			width: 44px !important;
+			height: 44px !important;
+			border-radius: 50% !important;
+			flex-shrink: 0;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+			transition: all 0.3s ease !important;
+			padding: 0 !important;
+			min-width: 44px !important;
+
+			&:hover {
+				background: #151515 !important;
+				transform: scale(1.05);
+			}
+
+			svg {
+				font-size: 16px !important;
+			}
+		}
+
+		&__scrollWrapper {
+			flex: 1;
+			overflow: hidden;
+			position: relative;
+		}
+
+		&__scrollContainer {
+			display: flex;
+			gap: 28px;
+			overflow-x: auto;
+			overflow-y: hidden;
+			scroll-behavior: smooth;
+			scrollbar-width: none; /* Firefox */
+			-ms-overflow-style: none; /* IE/Edge */
+			padding: 10px 0;
+			width: max-content;
+			animation: scrollDestinations 40s linear infinite;
+
+			&::-webkit-scrollbar {
+				display: none; /* Chrome/Safari */
+			}
+
+			// Pause animation on hover
+			&:hover {
+				animation-play-state: paused;
+			}
+		}
+
+		@keyframes scrollDestinations {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-50%);
+			}
+		}
+
+		&__card {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 14px;
+			flex-shrink: 0;
+			cursor: pointer;
+			transition: transform 0.3s ease;
+			width: 180px;
+
+			&:hover {
+				transform: translateY(-6px);
+			}
+		}
+
+		&__imageWrapper {
+			width: 180px;
+			height: 180px;
+			border-radius: 50%;
+			overflow: hidden;
+			position: relative;
+			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+			transition: box-shadow 0.3s ease;
+
+			.top-destinations__card:hover & {
+				box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+			}
+		}
+
+		&__image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 50%;
+			transition: transform 0.5s ease;
+
+			.top-destinations__card:hover & {
+				transform: scale(1.08);
+			}
+		}
+
+		&__name {
+			font-size: 1.05rem !important;
+			font-weight: 700 !important;
+			color: #1a1a1a !important;
+			margin: 0 !important;
+			text-align: center;
+			line-height: 1.3 !important;
+		}
+
+		&__tours {
+			font-size: 0.9rem !important;
+			font-weight: 500 !important;
+			color: #666 !important;
+			margin: 0 !important;
+			text-align: center;
+		}
+	}
+}
+
